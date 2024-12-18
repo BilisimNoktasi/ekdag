@@ -3,29 +3,32 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Blog } from "@/types";
-import client, { urlFor } from "@/sanity/lib/client";
 import { useTranslations } from "next-intl";
+import { getRequest } from "@/services/requestService";
+import Preloader from "../Preloader";
 
 const RelatedPost = () => {
 
   const [blogs,setBlogs] = useState<Blog[]>([])
+  const [loading,setLoading] = useState<boolean>()
 
   useEffect(()=> {
-    const getUrl = async () => {
-      const data = await client.fetch(`
-        *[_type == "blog"]{
-          blogTitle,
-          subTitle,
-          slug,
-          blogImage,
-          blogDescription,
-          createdAt
-        }`);
-        setBlogs(data);
-    };
-    getUrl();
+    getRequest({
+          controller: "blogs",
+          sort: ['createdAt'],
+          pagination: { page: 1, pageSize: 3 },
+          populate: "*",
+        })
+          .then((res) => {setBlogs(res.data)})
+          .finally(() => {
+            setLoading(!loading);
+          });
   },[])
-const t =useTranslations("ekdagBlog")
+  
+  const t =useTranslations("ekdagBlog")
+
+  if(loading) return <Preloader />
+
   return (
     <>
       <div className="animate_top rounded-md border border-stroke bg-white p-9 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
@@ -40,16 +43,16 @@ const t =useTranslations("ekdagBlog")
               key={key}
             >
               <div className="max-w-45 relative h-18 w-45">
-                {post.blogImage ? (
-                  <Image fill src={urlFor(post.blogImage).url()} alt="Blog" />
+                {post.blogResmi ? (
+                  <Image fill src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${post.blogResmi?.url}`} alt="Blog" />
                 ) : (
                   "No image"
                 )}
               </div>
               <h5 className="text-md font-medium text-black transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
-                <Link href={`/blog/${post.slug.current}`}>
+                <Link href={`/blog/${post.slug}`}>
                   {" "}
-                  {post.blogTitle.slice(0, 40)}...
+                  {post.blogBaslik.slice(0, 40)}...
                 </Link>
               </h5>
             </div>

@@ -19,6 +19,7 @@ export default function News() {
   useEffect(()=> {
     getRequest({
           controller:'haberlers',
+          sort: ['createdAt'],
           pagination:{page:1,pageSize:15},
           locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
           populate:'*'

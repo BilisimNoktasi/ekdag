@@ -1,5 +1,4 @@
 "use client";
-import client, { urlFor } from "@/sanity/lib/client";
 import { GalleryItem } from "@/types";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";

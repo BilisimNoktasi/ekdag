@@ -2,7 +2,6 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Feature } from '@/types';
 import { Link } from '@/i18n/routing';
-import { urlFor } from '@/sanity/lib/client';
 
 
 

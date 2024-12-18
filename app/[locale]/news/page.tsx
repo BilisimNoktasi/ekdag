@@ -1,6 +1,5 @@
 'use client'
 import NewsCard from "@/components/NewsCard";
-import Preloader from "@/components/Preloader";
 import { getRequest } from "@/services/requestService";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";

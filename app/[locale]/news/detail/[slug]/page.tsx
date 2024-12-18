@@ -1,10 +1,8 @@
 "use client";
 import Preloader from "@/components/Preloader";
-import client, { urlFor } from "@/sanity/lib/client";
 import { getRequest } from "@/services/requestService";
 import { NewsDetail } from "@/types";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { PortableText } from "next-sanity";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";

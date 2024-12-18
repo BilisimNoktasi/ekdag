@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import CardItem from "../CardItem";
 import Image from "next/image";
-import client from "@/sanity/lib/client";
 import HomeTesisCardItem from "../HomeTesisCardItem";
 import { getRequest } from "@/services/requestService";
 import { useParams } from "next/navigation";

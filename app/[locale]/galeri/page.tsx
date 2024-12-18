@@ -1,5 +1,4 @@
 "use client";
-import client, { urlFor } from "@/sanity/lib/client";
 import { GalleryType } from "@/types";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";

@@ -2,7 +2,6 @@ import type { NewsCard } from '@/types';
 import React from 'react'
 import { Link } from '@/i18n/routing';
 import { motion } from 'framer-motion';
-import { urlFor } from '@/sanity/lib/client';
 import Image from 'next/image';
 
 export default function NewsCard({news}: {news: NewsCard}) {

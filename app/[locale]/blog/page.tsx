@@ -1,7 +1,6 @@
 "use client";
 import BlogItem from "@/components/Blog/BlogItem";
 import Preloader from "@/components/Preloader";
-import client from "@/sanity/lib/client";
 import { getRequest } from "@/services/requestService";
 import { Blog } from "@/types";
 import { useTranslations } from "next-intl";

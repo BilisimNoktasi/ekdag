@@ -1,0 +1,104 @@
+{
+    "HeaderLink": {
+      "home": "Home",
+      "corporate": "Corporate",
+      "news": "News",
+      "leases": "Leases",
+      "gallery": "Gallery",
+      "blogs": "Blogs",
+      "contact": "Contact",
+      "president": "PRESIDENT",
+      "ekdag": "EKDAĞ INC."
+    },
+    "ekdag": {
+      "socialFacilities": "Social Facilities",
+      "publicBread": "Public Bread",
+      "dryingPlant": "Drying Plants",
+      "bogacayWorkshop": "Boğaçay Workshop"
+    },
+    "new": {
+      "news": "News",
+      "detail": "Detail"
+    },
+    "socialMedia": {
+      "socialMedia": "Social Media"
+    },
+    "ekdagPlant": {
+      "title": "Explore Ekdağ Facilities",
+      "subTitle": "With rich product contents and concepts suitable for every need, Ekdağ is with you across Antalya!",
+      "theaterCafe": "Theater Cafe",
+      "ekdagbeaches": "Ekdağ Beaches",
+      "ekdagFacilities": "Ekdağ Facilities"
+    },
+    "ekdagBlog": {
+      "ekdagBlog": "Ekdağ Blog",
+      "otherBlogs": "Other Blogs"
+    },
+    "corporateLinks": {
+      "corporateLinks": "Corporate Links",
+      "AntalyaMetropolitanMunicipality": "Antalya Metropolitan Municipality",
+      "antalyaFilmFestival": "Antalya Film Festival",
+      "antalyaTheaterFestival": "Antalya Theater Festival",
+      "antalyaCityTheater": "Antalya City Theater",
+      "antalyaTransportation": "Antalya Transportation",
+      "antalyaCard": "Antalya Card"
+    },
+    "footer": {
+      "subTitle": "The Gem of Antalya",
+      "contact": "Contact",
+      "siteMap": "Site Map",
+      "socialMedia": "Social Media",
+      "e-newsletter": "E-Newsletter",
+      "home": "Home",
+      "corporate": "Corporate",
+      "blog": "Blog",
+      "all": "All rights reserved by EKDAĞ INC."
+    },
+    "ekdagAs": {
+      "title": "EKDAĞ INC.",
+      "descripiton": "Our company was established in 1989 as a subsidiary of Antalya Metropolitan Municipality. Starting with bread production and distribution, Ekdağ continues to expand its service portfolio by adding social facilities, workshops, and various other projects. The areas of activity of our company include the operation, rental, and leasing of all types of movable and immovable property, establishing factories and making all kinds of production and sales at the Boğaçay production plant, and operating social facilities, open and closed parking lots.",
+      "ourvision": "Our Vision",
+      "vision": "By reducing external dependencies to the minimum in all of our processes, especially in raw materials, we aim to contribute to the economy of our country, continuously implement sustainable cost-saving measures, keep up with the development of technological infrastructure, and apply innovations in our activities. We strive to provide the best products and services to the people of our city, maintaining the highest quality standards without compromising, and becoming indispensable.",
+      "ourmission": "Our Mission",
+      "mision": "Our mission is to provide healthy and high-quality products and services in collaboration with individuals and institutions that we are confident in their competence, and to offer them to the residents of our city with Ekdağ's distinctive service standards."
+    },
+    "president": {
+      "title": "Mayor of Antalya Metropolitan Municipality",
+      "detail": "Muhittin BÖCEK, the Mayor of Antalya Metropolitan Municipality, was born in 1962 in Antalya's Konyaaltı district. He completed his primary, secondary, and high school education in Antalya. He completed his undergraduate studies in Public Relations and Economics. He further enriched his 25 years of political experience with a master's degree in Public Administration and Political Science. Having completed his military service at Samsun Military Hospital, Muhittin Böcek worked in various sectors, including agricultural production, transportation, and tourism. He actively participated in politics from a young age and served as the Central District Chairman of the Anavatan Party between 1994 and 1999. He was elected as the mayoral candidate of the Anavatan Party for Konyaaltı District in the 1999 elections, securing 27% of the votes. He had a successful five-year term, modernizing Konyaaltı. After being elected again in 2004 as a candidate from the Republican People's Party (CHP) with over 50% of the votes, he continued his successful term. In 2009, he was re-elected with 60% of the vote. In the 2014 elections, he became the first mayor to win four consecutive terms in the city center of Antalya. Throughout his political career, he served as the President of the Mediterranean Municipalities Union for four consecutive terms. He also held leadership roles in organizations such as BATAB, KONTEV, and Konyaaltı City Council. After 20 years of successful political career, he ran as the CHP candidate for Antalya Metropolitan Municipality in the 2019 local elections and was elected with 50.62% of the votes. He was re-elected as the Mayor of Antalya in the 31 March 2024 elections with 48.71% of the vote. On 28 May 2024, he was elected as the Coordinator of the Cittaslow Turkey Association. Known for his innovative management approach and love for people and nature, Muhittin Böcek is highly regarded for his services and projects aimed at all segments of society. His books: Politika ve İhanet (2022), Bu Şehre Aşığım (2019), İkinci Hayat"
+    },
+    "news": {
+      "ekdagNews": "Ekdağ News",
+      "detail": "Detail"
+    },
+    "leases": {
+      "leases": "Leases",
+      "title": "EKDAĞ INC. LEASE PORTFOLIO INFORMATION",
+      "one": "EKDAĞ INC. provides services to meet the common needs of the public and can respond to the needs of the people it serves at the highest level. Some of the Antalya Metropolitan Municipality’s enterprises have been leased to EKDAĞ INC. by the Metropolitan Municipality Council.",
+      "two": "7 businesses and 1 parking lot within Atatürk Cultural Center Park.",
+      "three": "1 parking lot and car wash on the eastern side of Parcel 1010 in Üçgen District.",
+      "four": "2 scale operations in the Wholesale Market.",
+      "five": "768.80m² tea garden located in Selçuk District, Parcel 157, Ada 13.",
+      "six": "1 futsal field, 1 Olympic pool, and 1 tea garden in the hobby garden of Bahtılı District.",
+      "seven": "2 kiosks for rent under the overpass in Manavgat and 1 vacant kiosk near the artificial waterfall.",
+      "eight": "Buffet, open-air restaurant, and survivor area in Türkbeleni Kent Forest in Manavgat.",
+      "nine": "6 kiosks in Lara Unity Unit.",
+      "ten": "4 tea gardens, 2 kiosks, and 2 parking lots in Düden Park.",
+      "eleven": "163 bagel stalls are located in various places across Antalya.",
+      "twelve": "1 bread factory located at 3891 Parcel 14.",
+      "thirteen": "30 kiosks under overpasses within Antalya.",
+      "fourteen": "120 Public Bread kiosks within Antalya.",
+      "fifteen": "6 Public Bread kiosks in Manavgat.",
+      "sixteen": "10 wooden kiosks located in various places across Antalya.",
+      "seventeen": "1 tea garden in the İsmet İnönü Kent Life Area Project.",
+      "eighteen": "1 photo stand inside Düden Park."
+    },
+    "contactUs": {
+      "contactUs": "Contact Us",
+      "name": "Full Name",
+      "phone": "Phone",
+      "message": "Message",
+      "mail": "Email",
+      "sendButton": "Send"
+    }
+  }
+   

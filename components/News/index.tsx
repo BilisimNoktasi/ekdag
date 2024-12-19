@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'

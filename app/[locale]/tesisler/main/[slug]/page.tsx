@@ -36,16 +36,7 @@ const TesisDetailMainPage = () => {
                     <img className="logo-sm py-12" src="/ekdag-ekmek-logo-800.png" />
                   </div> */}
           <div className="blog-details mt-18 blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-            <h1>{facilityData?.tesisAdi}</h1>
-
-            <div className="flex w-full items-center justify-center my-12">
-              {facilityData?.tesisCardImage ? (
-                <img
-                  className="w-96 h-96"
-                  src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${facilityData?.tesisCardImage?.url}`}
-                />
-              ) : null}
-            </div>
+           
 
             <MarkdownRenderer content={facilityData?.tesisDetail} />
 

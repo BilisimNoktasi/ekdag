@@ -20,11 +20,12 @@ const FeaturesTab = () => {
   useEffect(()=> {
     getRequest({
           controller: "features-tabs",
+          filters: ['createdAt'],
           populate: "*",
           locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
         })
           .then((res) => {
-            setFeatureDataTab(res.data);
+            setFeatureDataTab(res.data.reverse());
             setCurrentTab(res.data[0]?.baslik)
           })
           .finally(() => {

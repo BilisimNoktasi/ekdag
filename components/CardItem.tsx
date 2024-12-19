@@ -2,10 +2,14 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Feature } from '@/types';
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 
 
 export default function CardItem({feature}: {feature: Feature}) {
+
+  const t = useTranslations('ekdag')
+
     return (
       <>
       <motion.div
@@ -39,7 +43,7 @@ export default function CardItem({feature}: {feature: Feature}) {
           {/* Explore Button */}
           <div className="absolute inset-0 rounded-3xl flex items-center justify-center hover:backdrop-brightness-75 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button className="px-4 py-2 bg-orange-500 text-white font-medium rounded-lg shadow-lg">
-              Keşfet
+              {t('discover')}
             </button>
           </div>
         </Link>

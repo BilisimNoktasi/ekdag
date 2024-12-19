@@ -14,11 +14,11 @@ export default function Page() {
   return (
     <>
       <div className="flex justify-center custom-swiper deactive-mobile relative w-full h-[500px] md:aspect-[16/5]">
-        <Image src="/images/pages/kurumsal_page.webp" className="rounded-b-3xl brightness-75" fill alt="ekdag-gozde-logo.jpg" />
+        <Image src="/images/kiralamalar.webp" className="rounded-b-3xl brightness-75" fill alt="ekdag-gozde-logo.jpg" />
       </div>
 
       <div className="flex justify-center active-mobile custom-swiper relative w-full h-[500px] md:aspect-[16/5]">
-        <Image src="/images/pages/kurumsal_mob_page.webp" className="rounded-b-3xl brightness-75" fill alt="ekdag-gozde-logo.jpg" />
+        <Image src="/images/kiralamaler_mob.webp" className="rounded-b-3xl brightness-75" fill alt="ekdag-gozde-logo.jpg" />
       </div>
       <section className="pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
         <div className="container mx-auto">

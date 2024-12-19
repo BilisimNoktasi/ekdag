@@ -68,17 +68,17 @@ iframe{
 
 /* Sayfalama noktalarına stil verme */
 .swiper-pagination-bullet {
-  @apply !w-6 !h-6 !bg-gray-900 !opacity-60 rounded-full mx-1;
+  @apply !w-4 !h-4 !bg-white !opacity-60 rounded-full mx-1;
 }
 
 /* Aktif sayfalama noktası */
 .swiper-pagination-bullet-active {
-  @apply w-6 h-6 !bg-orange-500;
+  @apply w-3 h-3 !bg-orange-500;
 }
 
 /* Sayfalama noktalarına hover efekti */
 .swiper-pagination-bullet:hover {
-  @apply w-5 h-5 bg-orange-500;
+  @apply w-3 h-3 bg-orange-500;
 }
 
 @layer utilities {
@@ -149,7 +149,7 @@ iframe{
 
 @layer utilities {
   .custom-swiper .swiper-pagination {
-    @apply bottom-[-20px];
+    @apply bottom-[-30px];
   }
 }
 

@@ -18,6 +18,7 @@ const Feature = () => {
      getRequest({
             controller:'anasayfa-tesislers',
             populate:'*',
+            filters: ['createdAt'],
             locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
           }).then(res => {
             setHomeTesisData(res.data)

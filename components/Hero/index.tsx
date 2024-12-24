@@ -41,6 +41,7 @@ const Hero = () => {
     <>
       {/* Masaüstü için Swiper */}
       {!isMobile && (
+        <div className="w-full h-fit">
         <Swiper
           className="custom-swiper relative"
           modules={[EffectFade, Autoplay, Pagination]}
@@ -51,20 +52,6 @@ const Hero = () => {
           fadeEffect={{ crossFade: true }}
           spaceBetween={0}
           slidesPerView={1}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-            1024: {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
-          }}
           loop={true} // Döngü aktif
           autoplay={{
             delay: 4000, // Otomatik geçiş süresi (ms cinsinden)
@@ -73,13 +60,10 @@ const Hero = () => {
         >
           {images?.map((item, index) => (
             <SwiperSlide key={index} className="relative">
-              <div className="relative deactive-mobile">
+              <div className="deactive-mobile">
               <Link href={`/${item.category.toString()}/${item?.slug}`}>
-                <Image
-                width={1000}
-                height={500}
-                objectFit="cover"
-                layout="responsive"
+                <img
+                className="object-fill"
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.sliderGenis?.url}`}
                   alt={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.sliderGenis?.url}`}
                 />
@@ -88,6 +72,7 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </div>
       )}
 
       {/* Mobil için Swiper */}

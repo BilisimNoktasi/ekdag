@@ -1,8 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import { Metadata } from "next";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { getRequest } from "@/services/requestService";
 import Preloader from "@/components/Preloader";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
@@ -27,10 +25,7 @@ export default function Page() {
         });
     }, []);
 
-  const t = useTranslations("leases");
-
   if(loading) return <Preloader />
-    console.log(lasses)
 
   return (
     <>
@@ -45,7 +40,7 @@ export default function Page() {
         <div className="container mx-auto">
           <div className="max-w-c-1390 w-full mx-auto">
             <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-             <BlocksRenderer content={lasses} />
+             <BlocksRenderer content={lasses || []} />
             </div>
           </div>
         </div>

@@ -10,7 +10,6 @@ import "lightgallery/scss/lightgallery.scss";
 import "lightgallery/scss/lg-zoom.scss";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
-import { getRequest } from "@/services/requestService";
 import Preloader from "@/components/Preloader";
 import { GalleryItem } from "@/types";
 

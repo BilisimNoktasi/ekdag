@@ -1,6 +1,5 @@
 "use client";
 import Contact from "@/components/Contact";
-import { Metadata } from "next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getRequest } from "@/services/requestService";

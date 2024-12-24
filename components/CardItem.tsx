@@ -52,7 +52,7 @@ export default function CardItem({feature}: {feature: Feature}) {
         <div className="px-4 text-center">
           <h3 className="mb-3.5 mt-7.5 line-clamp-2 flex flex-row justify-center items-center text-md text-center font-medium text-black duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
             <img src={'/ekdag-ekmek-logo-800.png'} className='w-14 h-7' />
-            <Link href={`/tesisler/main/${feature.slug}`} className={`ml-4 font-extrabold text-xl`}>
+            <Link href={`/tesisler/main/${feature.slug}`} className={`ml-4 font-extrabold text-lg`}>
               {feature.tesisAdi}
             </Link>
           </h3>

@@ -20,18 +20,27 @@ export default function GalleryDetailPage() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    getRequest({
-      controller: "galeris",
-      filters: { slug: params?.slug },
-      populate: 'galeri_iceriks', // İlişkili verileri popüle et
-    })
-      .then((res) => {
-        console.log("Populated Response:", res); // Yanıtı kontrol et
-        setData(res?.data[0]); // Veriyi state'e aktar
+    // getRequest({
+    //   controller: "galeris",
+    //   filters: { slug: params?.slug },
+    //   populate: 'galeri_iceriks', // İlişkili verileri popüle et
+    // })
+    //   .then((res) => {
+    //     console.log("Populated Response:", res); // Yanıtı kontrol et
+    //     setData(res?.data[0]); // Veriyi state'e aktar
+    //   })
+    //   .finally(() => {
+    //     setLoading(false); // Yüklenme durumunu kaldır
+    //   });
+    const getData = async() => {
+      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/galeris?filters[slug][$eq]=${params?.slug}&populate[galeri_iceriks][populate]=medya`).then(async res=> {
+        const response = await res.json()
+        setData(response.data[0])
+      }).finally(()=> {
+        setLoading(false)
       })
-      .finally(() => {
-        setLoading(false); // Yüklenme durumunu kaldır
-      });
+    }
+    getData()
   }, [params?.slug]);
 
   if (loading) return <Preloader />;
@@ -48,7 +57,7 @@ export default function GalleryDetailPage() {
         {/* Galeri Resimleri */}
        { params?.slug !== 'videolar' ?(
         <LightGallery
-        elementClassNames="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4"
+        elementClassNames="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 mx-4 gap-4"
         speed={500}
         thumbnail={true}
         closable
@@ -56,7 +65,7 @@ export default function GalleryDetailPage() {
       >
         {data?.galeri_iceriks?.map((item, index) => (
           <a
-            key={index}
+          key={index}
             href={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.medya?.url}`}
           >
             <img
@@ -64,6 +73,7 @@ export default function GalleryDetailPage() {
               src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.medya?.url}`}
               alt={`Gallery image ${index}`}
             />
+            <h1 className="text-center mt-4 text-xl">{item.aciklama}</h1>
           </a>
         ))}
       </LightGallery>

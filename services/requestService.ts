@@ -35,7 +35,7 @@ export const getRequest = async (requestParam: RequestParameter) => {
     if (params.populate) query.append("populate", Array.isArray(params.populate) ? params.populate.join(",") : params.populate);
     if (params.locale) query.append("locale", params.locale);
     if (params.fields) query.append("fields", params.fields.join(","));
-    console.log(params.sort)
+    console.log(params.populate)
     return query.toString();
   };
   

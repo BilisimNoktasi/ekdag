@@ -54,6 +54,12 @@ export type Menu = {
     kartGorseli: {url:string};
   }
 
+  export type Address = {
+    adresBasligi: string;
+    adresDetay: string;
+    telefon: string;
+  }
+
   export type Social = {
     baslik: string;
     url: string;

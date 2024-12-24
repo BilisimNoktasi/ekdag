@@ -44,12 +44,10 @@ const Hero = () => {
         <div className="w-full h-fit">
         <Swiper
           className="custom-swiper relative"
-          modules={[EffectFade, Autoplay, Pagination]}
-          effect="fade"
+          modules={[Autoplay, Pagination]}
           pagination={{
             clickable: true,
           }}
-          fadeEffect={{ crossFade: true }}
           spaceBetween={0}
           slidesPerView={1}
           loop={true} // Döngü aktif

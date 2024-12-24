@@ -42,7 +42,7 @@ const Hero = () => {
       {/* Masaüstü için Swiper */}
       {!isMobile && (
         <Swiper
-          className="custom-swiper"
+          className="custom-swiper relative"
           modules={[EffectFade, Autoplay, Pagination]}
           effect="fade"
           pagination={{
@@ -51,6 +51,20 @@ const Hero = () => {
           fadeEffect={{ crossFade: true }}
           spaceBetween={0}
           slidesPerView={1}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+          }}
           loop={true} // Döngü aktif
           autoplay={{
             delay: 4000, // Otomatik geçiş süresi (ms cinsinden)

@@ -37,7 +37,7 @@ export type Menu = {
     tesisHarita: string;
     tesisKartResmi: {url:string}
     tesisDetaylar: Block[];
-    tesisDetayResmi: {url: string};
+    tesisDetayResmi: {url: string}[];
     tesisResimler: {url:string}[]
   }
 
@@ -90,7 +90,7 @@ export type Menu = {
     slug: string;
     tesisDetail: string;
     tesisCardImage: {url:string}
-    tesisDetailImage: {url:string};
+    tesisDetailImage: {url:string}[];
     tesisImages: {url:string}[]
   }
 

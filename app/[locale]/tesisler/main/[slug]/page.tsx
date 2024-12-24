@@ -46,13 +46,15 @@ const TesisDetailMainPage = () => {
             <div className="flex w-full items-center justify-center my-12">
                   {
                    facilityData?.tesisDetailImage ? (
-                     <Image
-                     width={600}
-                     height={600}
-                     
-                     src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${facilityData?.tesisDetailImage?.url}`}
-                     alt="AnaGorsel.png"
-                   />
+                    facilityData.tesisDetailImage.map((item,index)=> (
+                      <Image
+                      key={index}
+                      width={600}
+                      height={600}
+                      src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.url}`}
+                      alt="AnaGorsel.png"
+                    />
+                    ))
                    ):(null)
                   }
                  </div>

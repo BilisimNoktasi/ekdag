@@ -19,7 +19,7 @@ const BlogPage = () => {
               controller:'haberlers',
               pagination:{page:1,pageSize:dataSize},
               locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
-              sort: ['createdAt'],
+              sort: ['createdAt:desc'],
               populate:'*'
             }).then((res)=> {
               setNews(res.data)

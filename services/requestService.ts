@@ -1,9 +1,8 @@
 export const getRequest = async (requestParam: RequestParameter) => {
     const queryParams = buildQueryParams(requestParam);
-  
     // Strapi API'sine istek URL'si
     const url = `${process.env.NEXT_PUBLIC_BACKEND_URI}/${requestParam.controller}?${queryParams}`;
-  
+    console.log(url)
     const response = await fetch(url, {
       method: "GET",
       headers: {

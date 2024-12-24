@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,32 +8,33 @@ import { getRequest } from "@/services/requestService";
 import Preloader from "../Preloader";
 
 const RelatedPost = () => {
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+  const [loading, setLoading] = useState<boolean>();
 
-  const [blogs,setBlogs] = useState<Blog[]>([])
-  const [loading,setLoading] = useState<boolean>()
-
-  useEffect(()=> {
+  useEffect(() => {
     getRequest({
-          controller: "blogs",
-          sort: ['createdAt'],
-          pagination: { page: 1, pageSize: 3 },
-          populate: "*",
-        })
-          .then((res) => {setBlogs(res.data)})
-          .finally(() => {
-            setLoading(!loading);
-          });
-  },[])
-  
-  const t =useTranslations("ekdagBlog")
+      controller: "blogs",
+      sort: ["createdAt:desc"],
+      pagination: { page: 1, pageSize: 3 },
+      populate: "*",
+    })
+      .then((res) => {
+        setBlogs(res.data[0]);
+      })
+      .finally(() => {
+        setLoading(!loading);
+      });
+  }, []);
 
-  if(loading) return <Preloader />
+  const t = useTranslations("ekdagBlog");
 
+  if (loading) return <Preloader />;
+  console.log();
   return (
     <>
       <div className="animate_top rounded-md border border-stroke bg-white p-9 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
         <h4 className="mb-7.5 text-2xl font-semibold text-black dark:text-white">
-         {t("otherBlogs")}
+          {t("otherBlogs")}
         </h4>
 
         <div>
@@ -44,7 +45,11 @@ const RelatedPost = () => {
             >
               <div className="max-w-45 relative h-18 w-45">
                 {post.blogResmi ? (
-                  <Image fill src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${post.blogResmi?.url}`} alt="Blog" />
+                  <Image
+                    fill
+                    src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${post.blogResmi?.url}`}
+                    alt="Blog"
+                  />
                 ) : (
                   "No image"
                 )}

@@ -49,9 +49,9 @@ export type Menu = {
   }
 
   export type GalleryType = {
-    galeriBaslik: string;
+    baslik: string;
     slug: string;
-    galeriKartGorseli: {url:string};
+    kartGorseli: {url:string};
   }
 
   export type Social = {
@@ -67,8 +67,8 @@ export type Menu = {
   };
 
   export type GalleryItem = {
-    galeriBaslik: string;
-    galeriResimler: {url:string}[];
+    baslik: string;
+    galeri_iceriks: {aciklama:string, medya:{url:string}}[];
   }
   
   export type FeatureTab = {

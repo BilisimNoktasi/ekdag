@@ -36,15 +36,15 @@ export default function GalleryPage() {
           <div key={index} className="relative group w-full h-60 rounded-lg">
             <img
               className="w-full rounded-md brightness-95 h-60 transition-transform hover:cursor-pointer duration-300 group-hover:scale-105"
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.galeriKartGorseli?.url}`}
-              alt={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.galeriKartGorseli?.url}`}
+              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.kartGorseli?.url}`}
+              alt={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.kartGorseli?.url}`}
             />
             <div className="bg-opacity-60 rounded-b-lg hover:bg-opacity-90 w-full flex items-center justify-center text-white absolute bottom-0 bg-black ">
               <Link
                 href={`/galeri/${item.slug}`}
                 className="font-bold p-2 uppercase rounded-lg"
               >
-                {item.galeriBaslik}
+                {item.baslik}
               </Link>
             </div>
           </div>

@@ -14,7 +14,7 @@ const BlogPage = () => {
   useEffect(() => {
     getRequest({
       controller: "blogs",
-      sort: ["createdAt"],
+      sort: ['createdAt:desc'],
       populate: "*",
     })
       .then((res) => {

@@ -18,6 +18,7 @@ const Hero = () => {
   useEffect(() => {
      getRequest({
       controller:'mansets',
+      sort: ['createdAt:desc'],
       pagination:{page:1,pageSize:10},
       populate:'*'
     }).then((res)=> {
@@ -63,7 +64,7 @@ const Hero = () => {
                 <Image
                 width={1000}
                 height={500}
-                objectFit="center"
+                objectFit="cover"
                 layout="responsive"
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.sliderGenis?.url}`}
                   alt={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.sliderGenis?.url}`}

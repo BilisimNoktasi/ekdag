@@ -9,7 +9,7 @@ import Preloader from "../Preloader";
 
 const RelatedPost = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     getRequest({
@@ -19,7 +19,7 @@ const RelatedPost = () => {
       populate: "*",
     })
       .then((res) => {
-        setBlogs(res.data[0]);
+        setBlogs(res.data);
       })
       .finally(() => {
         setLoading(!loading);
@@ -29,21 +29,21 @@ const RelatedPost = () => {
   const t = useTranslations("ekdagBlog");
 
   if (loading) return <Preloader />;
-  console.log();
+  console.log(blogs);
   return (
     <>
       <div className="animate_top rounded-md border border-stroke bg-white p-9 shadow-solid-13 dark:border-strokedark dark:bg-blacksection">
-        <h4 className="mb-7.5 text-2xl font-semibold text-black dark:text-white">
+        <h4 className="mb-7.5 text-2xl font-semibold text-black dark:text-white text-center">
           {t("otherBlogs")}
         </h4>
 
         <div>
           {blogs.slice(0, 3).map((post, key) => (
             <div
-              className="mb-7.5 flex flex-wrap gap-4 xl:flex-nowrap 2xl:gap-6"
+              className="mb-6 flex flex-col flex-wrap gap-4 xl:flex-nowrap"
               key={key}
             >
-              <div className="max-w-45 relative h-18 w-45">
+              <div className="relative h-44 w-full">
                 {post.blogResmi ? (
                   <Image
                     fill
@@ -54,7 +54,7 @@ const RelatedPost = () => {
                   "No image"
                 )}
               </div>
-              <h5 className="text-md font-medium text-black transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
+              <h5 className="text-xl font-semibold text-gray-500 transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
                 <Link href={`/blog/${post.slug}`}>
                   {" "}
                   {post.blogBaslik.slice(0, 40)}...

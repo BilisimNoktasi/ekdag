@@ -31,10 +31,6 @@ const SingleBlogPage = () => {
   // Eğer blog verisi gelmediyse, yükleniyor durumu gösterin
   if(loading) return <Preloader />
 
-  console.log(params?.slug)
-
-  console.log(singleBlog)
-
   return (
     <>
       <section className="pb-20 lg:pb-25 xl:pb-30 pt-30">

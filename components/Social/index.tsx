@@ -20,6 +20,7 @@ export default function Social() {
   useEffect(() => {
     getRequest({
          controller: "instagrams",
+         sort: ['createdAt:desc'],
          populate: "*",
        })
          .then((res) => {
@@ -84,7 +85,7 @@ export default function Social() {
       >
         {
           feed?.map((item,index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className='mb-12'>
             <InstagramEmbed url={item.url} />
             </SwiperSlide>
           ))

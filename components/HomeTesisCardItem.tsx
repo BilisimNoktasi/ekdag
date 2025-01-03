@@ -46,7 +46,7 @@ export default function HomeTesisCardItem() {
             <h3 className="mb-3.5 mt-7.5 line-clamp-2 flex flex-row justify-center items-center text-md text-center font-medium text-black duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
               <img src={'/ekdag-ekmek-logo-800.png'} className='w-14 h-7' />
               <Link href={`/hizmetler`} className={`ml-4 font-extrabold text-xl`}>
-                {`Sosyal Tesisler`}
+                {t('socialFacilities')}
               </Link>
             </h3>
           </div>

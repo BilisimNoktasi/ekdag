@@ -10,8 +10,10 @@ import { HomeData } from "@/types";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { getRequest } from "@/services/requestService";
+import { useParams } from "next/navigation";
 
 const Hero = () => {
+  const params = useParams();
   const [images, setImages] = useState<HomeData[]>([]);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -20,6 +22,7 @@ const Hero = () => {
       controller:'mansets',
       sort: ['createdAt:desc'],
       pagination:{page:1,pageSize:10},
+      locale: `${params?.locale === "tr" ? "tr-TR" : "en"}`,
       populate:'*'
     }).then((res)=> {
       setImages(res.data)
@@ -59,7 +62,7 @@ const Hero = () => {
           {images?.map((item, index) => (
             <SwiperSlide key={index} className="relative">
               <div className="deactive-mobile">
-              <Link href={`/${item.category.toString()}/${item?.slug}`}>
+              <Link href={`/${item.category?.toString()}/${item?.slug}`}>
                 <img
                 className="object-fill"
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.sliderGenis?.url}`}

@@ -34,7 +34,7 @@ const TesisDetailSinglePage = () => {
              <div className="w-full px-4">
                <div className="blog-details mt-18 blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
                  {/* Tesis İsmi */}
-                 <h1>{facilityData?.tesisAdi}</h1>
+                 <h1 className='text-center'>{facilityData?.tesisAdi}</h1>
                   {
                     facilityData?.tesisDetaylar && <BlocksRenderer content={facilityData?.tesisDetaylar as []} />
                   }

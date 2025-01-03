@@ -38,7 +38,7 @@ const TesisDetailMainPage = () => {
               <img
                 src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${facilityData?.tesisCardImage?.url}`}
                 alt="Kobe Steel plant that supplied"
-                className="rounded-md object-center w-full h-[500px]"
+                className="rounded-md object-center w-full md:h-[600px] sm:h-[300px]"
               />
             </div>
             <MarkdownRenderer content={facilityData?.tesisDetail} />

@@ -39,21 +39,19 @@ const TesisDetailSinglePage = () => {
                     facilityData?.tesisDetaylar && <BlocksRenderer content={facilityData?.tesisDetaylar as []} />
                   }
                  {/* Ana Görsel */}
-                 <div className="w-full items-center flex flex-wrap justify-center my-12">
-                  { facilityData?.tesisDetayResmi ?
-                    facilityData?.tesisDetayResmi.map((item,index)=> (
+                 <div className="w-full items-center flex flex-wrap justify-center">
+                  { facilityData?.tesisDetayResmi ? (
                       <img
-                      key={index}
                       className='object-fill'
-                      src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.url}`}
+                      src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${facilityData.tesisDetayResmi.url}`}
                       alt="AnaGorsel.png"
                     />
-                    )): (null)
+                    ): (null)
                   }
                  </div>
    
                  {/* Tesis Fotoğrafları */}
-                 <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-y-6 gap-x-6">
+                 <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-y-6 mt-12 gap-x-6">
                    {
                      facilityData?.tesisResimler?.map((item, index) => (
                        <img

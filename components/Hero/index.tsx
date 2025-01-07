@@ -20,7 +20,7 @@ const Hero = () => {
   useEffect(() => {
      getRequest({
       controller:'mansets',
-      sort: ['createdAt:desc'],
+      sort: ['siralama'],
       pagination:{page:1,pageSize:10},
       locale: `${params?.locale === "tr" ? "tr-TR" : "en"}`,
       populate:'*'

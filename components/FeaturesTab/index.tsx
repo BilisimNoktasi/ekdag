@@ -20,7 +20,7 @@ const FeaturesTab = () => {
   useEffect(()=> {
     getRequest({
           controller: "features-tabs",
-          filters: ['createdAt'],
+          sort: ['createdAt:desc'],
           populate: "*",
           locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
         })
@@ -93,13 +93,13 @@ const FeaturesTab = () => {
                   : ""
               }`}
             >
-              <div className="flex w-10 h-10 mr-2 items-center justify-center rounded-full border border-orange-600 dark:border-strokedark dark:bg-blacksection">
+              <div className="flex w-9 h-9 mr-2 items-center justify-center rounded-full border border-orange-600 dark:border-strokedark dark:bg-blacksection">
                 <p className="text-metatitle3 font-semibold text-white dark:text-white">
                   0{index+1}
                 </p>
               </div>
               <div className="">
-                <button className="text-sm font-semibold text-white dark:text-white xl:text-regular">
+                <button className="text-[13px] font-semibold text-white dark:text-white">
                   {item.baslik}
                 </button>
               </div>

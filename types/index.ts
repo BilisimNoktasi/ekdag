@@ -74,7 +74,7 @@ export type Menu = {
 
   export type GalleryItem = {
     baslik: string;
-    galeri_iceriks: {aciklama:string, medya:{url:string}}[];
+    galeriResimler: {url:string}[];
   }
   
   export type FeatureTab = {

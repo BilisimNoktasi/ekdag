@@ -9,7 +9,8 @@ import Preloader from "@/components/Preloader";
 export default function GalleryPage() {
   const [gallery, setGallery] = useState<GalleryType[]>();
   const [loading, setLoading] = useState<boolean>(true);
-
+  const t = useTranslations("HeaderLink");
+  
   useEffect(() => {
     getRequest({
       controller: "galeris",
@@ -23,7 +24,6 @@ export default function GalleryPage() {
       });
   }, []);
 
-  const t = useTranslations("HeaderLink");
   if (loading) return <Preloader />;
 
   return (

@@ -12,6 +12,7 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import Preloader from "@/components/Preloader";
 import { GalleryItem } from "@/types";
+import { getRequest } from "@/services/requestService";
 
 export default function GalleryDetailPage() {
   const params = useParams();
@@ -19,27 +20,26 @@ export default function GalleryDetailPage() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    // getRequest({
-    //   controller: "galeris",
-    //   filters: { slug: params?.slug },
-    //   populate: 'galeri_iceriks', // İlişkili verileri popüle et
-    // })
-    //   .then((res) => {
-    //     console.log("Populated Response:", res); // Yanıtı kontrol et
-    //     setData(res?.data[0]); // Veriyi state'e aktar
-    //   })
-    //   .finally(() => {
-    //     setLoading(false); // Yüklenme durumunu kaldır
-    //   });
-    const getData = async() => {
-      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/galeris?filters[slug][$eq]=${params?.slug}&populate[galeri_iceriks][populate]=medya`).then(async res=> {
-        const response = await res.json()
-        setData(response.data[0])
-      }).finally(()=> {
-        setLoading(false)
+    getRequest({
+      controller: "galeris",
+      filters: { slug: params?.slug },
+      populate: '*', // İlişkili verileri popüle et
+    })
+      .then((res) => {
+        setData(res?.data[0]); // Veriyi state'e aktar
       })
-    }
-    getData()
+      .finally(() => {
+        setLoading(false); // Yüklenme durumunu kaldır
+      });  //&populate[galeri_iceriks][populate]=medya
+    // const getData = async() => {
+    //   await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URI}/galeris?filters[slug][$eq]=${params?.slug}`).then(async res=> {
+    //     const response = await res.json()
+    //     setData(response.data[0])
+    //   }).finally(()=> {
+    //     setLoading(false)
+    //   })
+    // }
+    // getData()
   }, [params?.slug]);
 
   if (loading) return <Preloader />;
@@ -62,17 +62,16 @@ export default function GalleryDetailPage() {
         closable
         plugins={[lgThumbnail, lgZoom]}
       >
-        {data?.galeri_iceriks?.map((item, index) => (
+        {data?.galeriResimler?.map((item, index) => (
           <a
           key={index}
-            href={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.medya?.url}`}
+            href={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.url}`}
           >
             <img
               className="w-full h-[250px] rounded-lg"
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.medya?.url}`}
+              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.url}`}
               alt={`Gallery image ${index}`}
             />
-            <h1 className="text-center mt-4 text-xl">{item.aciklama}</h1>
           </a>
         ))}
       </LightGallery>
@@ -82,16 +81,15 @@ export default function GalleryDetailPage() {
 
         {/* Video ve Iframe */}
         <div className="grid grid-cols-3 gap-4 my-8">
-          {params?.slug === 'videolar' ? data?.galeri_iceriks?.map((item, index) => (
+          {params?.slug === 'videolar' ? data?.galeriResimler?.map((item, index) => (
             <div key={index}>
             <video
               controls
-              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.medya?.url}`}
+              src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item?.url}`}
               className="rounded-md"
               width={'100%'}
               height={100}
             ></video>
-            <h1 className='text-center mt-4 font-semibold text-xl'>{item.aciklama}</h1>
             </div>
           )):(null)}
         </div>

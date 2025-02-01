@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
             hostname: 'localhost',
           },
           {
+            protocol: 'http',
+            hostname: '185.9.37.6'
+          },
+          {
             protocol: 'https',
             hostname: 'ekdag-api.bn.org.tr'
           },

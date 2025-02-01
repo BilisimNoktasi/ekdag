@@ -30,15 +30,17 @@ const TesisDetailMainPage = () => {
   if (loading) return <Preloader />;
 
   return (
-    <div className="max-w-c-1154 w-full mx-auto">
+    <div className="max-w-c-1016 w-full mx-auto">
       <section className="pb-16 md:pb-20 lg:pb-24">
         <div className="w-full px-4">
           <div className="blog-details mt-18 blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
             <div className="relative w-full h-max mb-12">
-              <img
+              <Image
                 src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${facilityData?.tesisCardImage?.url}`}
                 alt="Kobe Steel plant that supplied"
-                className="rounded-md object-center w-full md:h-[450px] sm:h-[300px]"
+                width={500}
+                height={500}
+                layout='responsive'
               />
             </div>
             <MarkdownRenderer content={facilityData?.tesisDetail} />
@@ -51,6 +53,7 @@ const TesisDetailMainPage = () => {
                       key={index}
                       width={600}
                       height={600}
+                      layout='responsive'
                       src={`${process.env.NEXT_PUBLIC_IMAGE_URI}${item.url}`}
                       alt="AnaGorsel.png"
                     />

@@ -27,6 +27,12 @@ const menuData: Menu[] = [
       ]
     },
     {
+        id: 3.1,
+        title: "facility",
+        newTab: false,
+        path: "/hizmetler",
+    },
+    {
       id: 3.1,
       title: "news",
       newTab: false,

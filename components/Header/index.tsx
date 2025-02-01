@@ -53,14 +53,14 @@ const Header = () => {
             alt="logo"
             width={119.03}
             height={30}
-            className="hidden w-full dark:block"
+            className="hidden dark:block"
           />
           <Image
             src="/ekdag-ekmek-logo-800.png"
             alt="logo"
             width={119.03}
             height={30}
-            className="w-full dark:hidden"
+            className="dark:hidden"
           />
         </Link>
         
@@ -121,7 +121,7 @@ const Header = () => {
             </div>
           ): null
           }
-          <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+          <ul className="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-7">
           {menuData.map((menuItem, index) => (
   <li key={index} className={menuItem.submenu && "group relative"}>
     {menuItem.submenu ? (

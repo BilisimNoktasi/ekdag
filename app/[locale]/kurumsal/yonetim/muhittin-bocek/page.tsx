@@ -10,7 +10,7 @@ export default function DocsPage() {
     const params = useParams()
   const t =useTranslations("president")
     const [loading, setLoading] = useState(true);
-    const [detail, setDetail] = useState<RootNode[] | undefined>(undefined);
+    const [detail, setDetail] = useState();
 
     useEffect(() => {
         getRequest({
@@ -22,7 +22,7 @@ export default function DocsPage() {
                 if (Array.isArray(res?.data?.[0]?.presidentDetail)) {
                     setDetail(res.data[0].presidentDetail);
                 } else {
-                    setDetail([] as RootNode[]);
+                    setDetail([]);
                 }
             })
             .finally(() => {

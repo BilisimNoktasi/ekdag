@@ -19,7 +19,11 @@ export default function DocsPage() {
             locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
         })
             .then((res) => {
-                setDetail(res.data[0].presidentDetail);
+                if (res?.data?.[0]?.presidentDetail) {
+                    setDetail(res.data[0].presidentDetail);
+                } else {
+                    setDetail([]); // Fallback to empty array
+                }
             })
             .finally(() => {
                 setLoading(false);

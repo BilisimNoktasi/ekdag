@@ -1,37 +1,14 @@
-"use client"
-import {useTranslations} from "next-intl";
-import {useEffect, useState} from "react";
-import {getRequest} from "@/services/requestService";
-import {useParams} from "next/navigation";
-import Preloader from "@/components/Preloader";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import { Metadata } from "next";
+import { useTranslations } from "next-intl";
+
+export const metadata: Metadata = {
+  title: "Yönetim | Muhittin Böcek",
+  description: "Antalya Büyükşehir Belediye Başkanı",
+  // other metadata
+};
 
 export default function DocsPage() {
-    const params = useParams()
   const t =useTranslations("president")
-    const [loading, setLoading] = useState(true);
-    const [detail, setDetail] = useState<any[] | undefined>(undefined);
-
-    useEffect(() => {
-        getRequest({
-            controller: "presidents",
-            populate: "*",
-            locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
-        })
-            .then((res) => {
-                if (Array.isArray(res?.data?.[0]?.presidentDetail)) {
-                    setDetail(res.data[0].presidentDetail);
-                } else {
-                    setDetail([]);
-                }
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-    }, []);
-
-    if(loading) return <Preloader />
-    console.log(detail)
   return (
     <>
       <section className="pb-16 pt-24 md:pb-20 md:pt-28 lg:pb-24 lg:pt-32">
@@ -48,7 +25,12 @@ export default function DocsPage() {
               <div className="blog-details blog-details-docs shadow-three dark:bg-gray-dark rounded-sm bg-white px-8 py-11 sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
                 <h3>{t("title")}</h3>
                 <h1>Muhittin BÖCEK</h1>
-                <BlocksRenderer content={detail} />
+
+                <p className="text-body-color dark:text-body-color-dark text-base">
+                  {t("detail")}
+                </p>
+
+             
               </div>
             </div>
           </div>

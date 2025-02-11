@@ -10,7 +10,7 @@ export default function DocsPage() {
     const params = useParams()
   const t =useTranslations("president")
     const [loading, setLoading] = useState(true);
-    const [detail, setDetail] = useState();
+    const [detail, setDetail] = useState<RootNode[] | undefined>(undefined);
 
     useEffect(() => {
         getRequest({
@@ -19,10 +19,10 @@ export default function DocsPage() {
             locale:`${params?.locale === 'tr' ? 'tr-TR':'en'}`,
         })
             .then((res) => {
-                if (res?.data?.[0]?.presidentDetail) {
+                if (Array.isArray(res?.data?.[0]?.presidentDetail)) {
                     setDetail(res.data[0].presidentDetail);
                 } else {
-                    setDetail([]); // Fallback to empty array
+                    setDetail([] as RootNode[]);
                 }
             })
             .finally(() => {

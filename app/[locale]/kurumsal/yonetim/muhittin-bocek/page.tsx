@@ -4,13 +4,13 @@ import {useEffect, useState} from "react";
 import {getRequest} from "@/services/requestService";
 import {useParams} from "next/navigation";
 import Preloader from "@/components/Preloader";
-import {BlocksRenderer} from "@strapi/blocks-react-renderer";
+import { BlocksRenderer, type RootNode } from "@strapi/blocks-react-renderer";
 
 export default function DocsPage() {
     const params = useParams()
   const t =useTranslations("president")
     const [loading, setLoading] = useState(true);
-    const [detail, setDetail] = useState();
+    const [detail, setDetail] = useState<RootNode[] | undefined>(undefined);
 
     useEffect(() => {
         getRequest({

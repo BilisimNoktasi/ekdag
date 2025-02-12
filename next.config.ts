@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
           },
           {
             protocol: 'https',
-            hostname: 'ekdag-api.hbtech.com.tr'
+            hostname: 'api.ekdag.com.tr'
           },
           {
             protocol: 'https',

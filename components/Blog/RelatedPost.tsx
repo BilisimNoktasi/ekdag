@@ -55,7 +55,7 @@ const RelatedPost = () => {
                 )}
               </div>
               <h5 className="text-xl font-semibold text-gray-500 transition-all duration-300 hover:text-primary dark:text-white dark:hover:text-primary">
-                <Link href={`/blog/detail/${post.slug}`}>
+                <Link href={`/blog/${post.slug}`}>
                   {" "}
                   {post.blogBaslik.slice(0, 40)}...
                 </Link>
